@@ -1,0 +1,11 @@
+{
+    "name": "kophe/blog",
+    "description": "projet poo de blog du 06/03/23",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
