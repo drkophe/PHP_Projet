@@ -34,15 +34,20 @@ class View
     /* afficher le contenu d'un template */
     public function render (string $template, array $variables=[]){
 
+        //création du nom complet pour le fichier
         $filename = "{$this -> templateDir}/{$template}.php";
 
+        //Démarrer le buffer d'affichage
         ob_start();
 
-        extract($varaibles);
+        // extraction des variables
+        extract($variables);
         extract([self::GLOBAL_NAME => $this -> globals]);
 
+        //inclusion du fichier template
         include $filename;
 
+        //retourner le fichier compiler
         return ob_get_clean();
     }
 }
